@@ -7,10 +7,10 @@
     </div>
     <div class="humberger__menu__cart">
         <ul>
-            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            <li><a href="#"><i class="fa fa-heart"></i> <span>1<!--zliczenie elementów w liscie(długośc listy)--></span></a></li>
+            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3<!--zliczenie elementów w liscie(długośc listy)--></span></a></li>
         </ul>
-        <div class="header__cart__price">item: <span>$150.00</span></div>
+        <div class="header__cart__price">item: <span>$150.00<!--wartość koszyka pobrana z listy--></span></div>
     </div>
     <div class="humberger__menu__widget">
         <div class="header__top__right__language">
@@ -23,7 +23,7 @@
             </ul>
         </div>
         <div class="header__top__right__auth">
-            <a href="#"><i class="fa fa-user"></i> Login</a>
+            <a href="#"><i class="fa fa-user"></i> Login<!--OAuth--></a>
         </div>
     </div>
     <nav class="humberger__menu__nav mobile-menu">
@@ -80,16 +80,19 @@
                             <a href="#"><i class="fa fa-pinterest-p"></i></a>
                         </div>
                         <div class="header__top__right__language">
-                            <img src="/assets/img/language.png" alt="">
-                            <div>English</div>
+                            <img src="/assets/img/flag.png" alt="">
+                            <div>Polish</div>
                             <span class="arrow_carrot-down"></span>
                             <ul>
-                                <li><a href="#">Spanis</a></li>
+                                <li><a href="#">Polish</a></li>
                                 <li><a href="#">English</a></li>
                             </ul>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="#"><i class="fa fa-user"></i> Login</a>
+                            <a href="#"><i class="fa fa-user"></i> Login</a>                            
+                        </div>
+                        <div class="header__top__right__auth">
+                            <a href="#"> /Register</a>                            
                         </div>
                     </div>
                 </div>
@@ -146,20 +149,10 @@
                 <div class="hero__categories">
                     <div class="hero__categories__all">
                         <i class="fa fa-bars"></i>
-                        <span>All departments</span>
+                        <span>All categories</span>
                     </div>
-                    <ul>
-                        <li><a href="#">Fresh Meat</a></li>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Fruit & Nut Gifts</a></li>
-                        <li><a href="#">Fresh Berries</a></li>
-                        <li><a href="#">Ocean Foods</a></li>
-                        <li><a href="#">Butter & Eggs</a></li>
-                        <li><a href="#">Fastfood</a></li>
-                        <li><a href="#">Fresh Onion</a></li>
-                        <li><a href="#">Papayaya & Crisps</a></li>
-                        <li><a href="#">Oatmeal</a></li>
-                        <li><a href="#">Fresh Bananas</a></li>
+                    <ul *ngFor="let category of categories">
+                        <li><a href="#">{{category.nameOfCategory}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -357,7 +350,7 @@
                     <div class="featured__item__text">
                         <h6><a href="#">Crab Pool Security</a></h6>
                         <h5>$30.00</h5>
-                    </div>
+                    </div> 
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
